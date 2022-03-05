@@ -127,12 +127,12 @@ router.post('/modern_treasury_api/create_counterparty', async (req, res, next) =
 });
 
 // create debit ach payment order
-router.post('/modern_treasury_api/create_counterparty', async (req, res, next) => {
+router.post('/modern_treasury_api/debit_payment_order', async (req, res, next) => {
     var data = JSON.stringify({
         "type": "ach",
         "amount": req.body.amount,
         "direction": "debit",
-        "currency": req.body.amount,
+        "currency": req.body.currency,
         "originating_account_id": req.body.internalAccountId,
         "receiving_account_id": req.body.counterpartyId
     });
